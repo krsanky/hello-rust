@@ -11,7 +11,7 @@ main: $(SRCDIR)/$@.rs
 	$(RUSTC) $<
 
 clean:
-	rm main
+	rm -f main
 
 .PHONY: clean
 
