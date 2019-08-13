@@ -1,4 +1,4 @@
-fn main() {
+fn f1() {
 	let x = 5 + /* 90 + */ 5;
 
 	let logical: bool = true;
@@ -22,3 +22,15 @@ fn main() {
 	println!("one million :{}", 1_000_000u32);
 }
 
+fn cl1() {
+	let color = "green";
+	let print = || println!("`color`:{}", color);
+
+	print();
+	print();
+}
+
+fn main() {
+	f1();
+	cl1();
+}
