@@ -1,3 +1,6 @@
+use std::thread;
+use std::time;
+
 struct Philosopher {
     name: String,
 }
@@ -10,6 +13,9 @@ impl Philosopher {
     }
 
     fn eat(&self) {
+        println!("{} is eating.", self.name);
+		let d = time::Duration::from_millis(1000);
+		thread::sleep(d);
         println!("{} is done eating.", self.name);
     }
 }
