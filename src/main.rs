@@ -1,4 +1,5 @@
-use std::sync::{Arc, Mutex};
+//https://doc.rust-lang.org/1.4.0/book/dining-philosophers.html
+use std::sync::{Arc, Mutex}; //Arc == Atomic reference count
 use std::thread;
 use std::time;
 
