@@ -14,10 +14,13 @@ fn main() {
 		println!("input number:");
 		let mut guess = String::new();
 		io::stdin().read_line(&mut guess).expect("failed to read");
+
 		println!("you guessed {}", guess);
 
-		// shadowing ?
-		let guess: u32 = guess.trim().parse().expect("error converting guess to u32");
+		let guess: u32 = match guess.trim().parse() {
+			Ok(num) => num,
+			Err(_) => continue,
+		};
 
 		match guess.cmp(&secret_number) {
 			Ordering::Less => println!("too small"),
