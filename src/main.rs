@@ -71,6 +71,14 @@ fn main() {
     f1();
     cl1();
 
+	// -----------------------
+	let s1 = "Hello, world!";
+
+	// with an explicit type annotation
+	let s2: &'static str = "Hello, world!";
+	println!("s1:{} s2:{}", s1, s2);
+	// -----------------------
+
     println!("-----------");
     let table = Arc::new(Table {
         forks: vec![
