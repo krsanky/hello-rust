@@ -48,9 +48,16 @@ fn main() {
 
 	let ev = "VAR1";
 	let ev = env::var(ev);
+	let ev2 = ev.clone();
 	match ev {
 		Ok(v) => println!("ev val:{}", v),
 		Err(e) => println!("ev err:{}", e),
 	}
+	
+	s.f1 = match ev2 {
+		Ok(ref v) => Some(v),
+		Err(_) => None,
+	};
+	println!("s.f1:{}", s.f1.unwrap_or("None"));
 
 }
